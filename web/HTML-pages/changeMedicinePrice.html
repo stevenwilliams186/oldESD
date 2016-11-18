@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <form action="/GPBusiness/requests/changeMedicinePrice.do" method="POST">
+
+            <table>
+                <tr>
+                    <td>
+                        Change Medicine Price:
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Medicine ID: <input type="text" name="id" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        New Cost: <input type="text" name="cost" value="" />
+                    </td>
+                    <td>
+                        <input type="submit" value="submit" name="submit" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <description>The path to the HTML documents for include statements</description>
+        <param-name>pathIncludeHTML</param-name>
+        <param-value>/GPBusiness/Web Pages/HTML-pages/</param-value>
+    </context-param>
+    <filter>
+        <filter-name>SessionFilter</filter-name>
+        <filter-class>filters.SessionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SessionFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <listener>
+        <description>App Context Listener</description>
+        <listener-class>listeners.ContextListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>Front</servlet-name>
+        <servlet-class>servlets.Front</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Front</servlet-name>
+        <url-pattern>/index.html</url-pattern>
+        <url-pattern>/Front</url-pattern>
+        <url-pattern>/requests/*</url-pattern>
+        <url-pattern>/pages/*</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            20
+        </session-timeout>
+    </session-config>
+    <context-param>
+        <description>The name of the DB to connect to</description>
+        <param-name>dbName</param-name>
+        <param-value>esd</param-value>
+    </context-param>
+    <context-param>
+        <description>The URL of the database</description>
+        <param-name>dbURL</param-name>
+        <param-value>jdbc:mysql://localhost:3306/esd</param-value>
+    </context-param>
+    <context-param>
+        <description>The password of the DB</description>
+        <param-name>dbPassword</param-name>
+        <param-value/>
+    </context-param>
+    <context-param>
+        <description>The username of the DB</description>
+        <param-name>dbUsername</param-name>
+        <param-value>root</param-value>
+    </context-param>
+</web-app>
